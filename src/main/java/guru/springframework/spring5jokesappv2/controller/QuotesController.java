@@ -1,6 +1,5 @@
 package guru.springframework.spring5jokesappv2.controller;
 
-import guru.springframework.spring5jokesappv2.service.ChuckNorrisQuotesService;
 import guru.springframework.spring5jokesappv2.service.QuotesService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,9 +14,9 @@ public class QuotesController {
         this.service = service;
     }
 
-    @RequestMapping("/quote/chuck-norris")
+    @RequestMapping({"/", ""})
     public String getQuote(Model model){
         model.addAttribute("quote", this.service.getQuote());
-        return "quote";
+        return "index";
     }
 }
